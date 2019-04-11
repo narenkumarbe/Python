@@ -17,8 +17,8 @@ else:
         count+=1
         
         
-  output:
-  Enter number of sequence10
+output:
+Enter number of sequence10
 fibonacci sequence of 10 : 
 0
 1
