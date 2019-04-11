@@ -17,3 +17,15 @@ words.sort()
 print("The sorted words are:")
 for word in words:
    print(word)
+
+   
+Output
+The sorted words are:
+Example
+Hello
+Is
+With
+an
+cased
+letters
+this
