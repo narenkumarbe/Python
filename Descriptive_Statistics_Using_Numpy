@@ -1,0 +1,17 @@
+import numpy as np
+data=np.genfromtxt('ToothGrowth.csv',names=True,delimiter=',',dtype=None,encoding=None)
+summary_list=[]
+for supp_lvl in np.unique(data['supp']):
+    for dose_lvl in np.unique(data['dose']):
+        data_to_sum=data[(data['supp']==supp_lvl)&(data['dose']==dose_lvl)]
+        mean = data_to_sum['len'].mean()
+        sd = data_to_sum['len'].std()
+        max_s=data_to_sum['len'].max()
+        min_s=data_to_sum['len'].min()
+        ps=np.percentile(data_to_sum['len'],[25,75])
+        summary_list.append((mean,sd,max_s,min_s,ps[0],ps[1],supp_lvl,dose_lvl))
+
+results=np.array(summary_list,dtype=None)
+np.set_printoptions(suppress=True)
+print(results)
+print(summary_list)
