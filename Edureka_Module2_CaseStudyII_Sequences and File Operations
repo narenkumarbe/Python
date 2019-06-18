@@ -1,0 +1,58 @@
+                                                            Case Study Solution
+
+Domain – Telecom
+focus – Optimization
+
+Business challenge/requirement
+LifeTel Telecom is the latest entrant in the highly competitive Telecom market of Singapore. It issues SIM to the verified users. 
+Till now verification was manual through the photocopy of approved id card document. 
+However, government has recently introduced Social ID called Reference ID which is mapped to fingerprint of user. 
+LifeTel should now verify user against the fingerprint and Reference ID
+
+Key issues
+Build a system where when user enters Reference ID it is encrypted, 
+so that hackers cannot view the mapping of Reference ID and finger print
+
+Considerations
+System should be secure
+
+Data volume
+- NA
+Additional information
+- NA
+Business benefits
+Company will be able to quickly issue SIM to user and expected gain in volume is approximately 10 times as the manual process of 
+verification is replaced with secure automated system
+
+Approach to Solve
+You have to use fundamentals of Python taught in module 2
+1. Read the input from command line – Reference ID
+2. Check for validity – it should be 12 digits and allows on number and alphabet
+3. Encrypt the Reference ID and print it for reference
+
+Enhancements for code
+You can try these enhancements in code
+1. Allow some special characters in ReferenceID
+2. Give the option for decryption to user
+
+Solution
+import base64 # Used for encoding
+# Take Input from user
+reference_id = input ('Enter Reference ID: ')
+if(len(reference_id) != 12):
+  print("Reference ID should be 12 characters")
+# list of characters allowed
+allowed_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz" + "0123456789"
+is_validated = True
+for c in reference_id:
+  if (c not in allowed_chars):
+    is_validated = False
+    break
+print("Is validated:", is_validated)
+
+if(not is_validated) :
+  print("Reference ID should contain only number and alphabets")
+
+# Encrypt the Reference ID:
+reference_id_encrypt = base64.b64encode(reference_id.encode())
+print(" Congratulations!!! ReferenceID is encrypted, You are Safe from Hackers:",reference_id_encrypt )
