@@ -10,7 +10,7 @@ gender = numpy.array(df['Gender'])
 phd = numpy.array(df['PhD']) 
 age = numpy.array(df['Age']) 
 print(df)
-
+========================================================================================================================================
 2. Find: 1. The number of men with a PhD 2. The number of women with a PhD
 Solution:
 import numpy, pandas 
@@ -27,7 +27,7 @@ for i in range(0, 100):
   if gender[i] == 0 and phd[i] == 1:
     women_count +=1 print(men_count) 
  print(women_count)
- 
+======================================================================================================================================= 
 3. Store the “Age” and “PhD” columns in one DataFrame and delete the data of all people who don’t have a PhD
 Solution:
 import numpy, pandas 
@@ -43,7 +43,7 @@ for i in range(0, 100):
   if frame.loc[i]["PhD"] == 0: 
     frame = frame.drop(i) 
 print(frame)
-
+========================================================================================================================================
 4. Calculate the total number of people who have a PhD degree.
 Solution:
 import numpy, pandas 
@@ -60,14 +60,15 @@ for i in range(0, 100):
   if gender[i] == 0 and phd[i] == 1: 
     women_count +=1 
 print(men_count + women_count)
-
+========================================================================================================================================
 5. How do you Count The Number Of Times Each Value Appears In An Array Of Integers?
 [0, 5, 4, 0, 4, 4, 3, 0, 0, 5, 2, 1, 1, 9]
-Answer should be array([4, 2, 1, 1, 3, 2, 0, 0, 0, 1]) which means 0 comes 4 times, 1 comes 2 times, 2 comes 1 time, 3 comes 1 time and so on.
+Answer should be array([4, 2, 1, 1, 3, 2, 0, 0, 0, 1]) which means 0 comes 4 times, 1 comes 2 times, 2 comes 1 time, 
+3 comes 1 time and so on.
 Solution: 
 import numpy arr = numpy.array([0, 5, 4, 0, 4, 4, 3, 0, 0, 5, 2, 1, 1, 9]) 
 print(numpy.bincount(arr))
-
+========================================================================================================================================
 6. Create a numpy array [[0, 1, 2],[ 3, 4, 5],[ 6, 7, 8],[ 9, 10, 11]]) and filter the elements greater than 5.
 Solution: 
 import numpy as np x = np.array([[ 0, 1, 2],[ 3, 4, 5],[ 6, 7, 8],[ 9, 10, 11]]) 
@@ -77,7 +78,7 @@ print('\n')
 # Now we will print the items greater than 5 
 print('The items greater than 5 are:' ) 
 print(x[x > 5])
-
+========================================================================================================================================
 7. Create a numpy array having NaN (Not a Number) and print it.
 array([ nan, 1., 2., nan, 3., 4., 5.])
 Print the same array omitting all elements which are nan
@@ -86,53 +87,53 @@ import numpy
 a = numpy.array([numpy.nan, 1,2,numpy.nan,3,4,5]) 
 print(a) 
 print(a[~numpy.isnan(a)])
-
+========================================================================================================================================
 8. Create a 10x10 array with random values and find the minimum and maximum values.
 Solution: 
 import numpy as np 
 Z = np.random.random((10,10)) 
 Zmin, Zmax = Z.min(), Z.max() 
 print(Zmin, Zmax)
-
+========================================================================================================================================
 9. Create a random vector of size 30 and find the mean value.
 Solution
 import numpy as np 
 Z = np.random.random(30)
 m = Z.mean() 
 print(m)
-
+========================================================================================================================================
 10. Create numpy array having elements 0 to 10 And negate all the elements between 3 and 9.
 Solution: 
 import numpy as np 
 Z = np.arange(11) 
 Z[(3 < Z) & (Z <= 8)] *= -1 
 print(Z)
-
+========================================================================================================================================
 11. Create a random array of 3 rows and 3 columns and sort it according to 1st column, 2nd column or 3rd column.
 Solution: 
 Z = np.random.randint(0,10,(3,3)) 
 print(Z) 
 print(Z[Z[:,1].argsort()])
-
+========================================================================================================================================
 12. Create a four dimensions array get sum over the last two axis at once.
 Solution: 
 A = np.random.randint(0,10,(3,4,3,4)) 
 sum = A.reshape(A.shape[:-2] + (-1,)).sum(axis=-1) 
 print(sum)
-
+========================================================================================================================================
 13. Create a random array and swap two rows of an array.
 Solution: 
 A = np.arange(25).reshape(5,5) 
 A[[0,1]] = A[[1,0]] 
 print(A)
-
+========================================================================================================================================
 14. Create a random matrix and Compute a matrix rank.
 Solution: 
 Z = np.random.uniform(0,1,(10,10)) 
 U, S, V = np.linalg.svd(Z) # Singular Value Decomposition 
 rank = np.sum(S > 1e-10) 
 print(rank)
-
+========================================================================================================================================
 15. Analyse various school outcomes in Tennessee using pandas. Suppose you are a public school administrator. 
 Some schools in your state of Tennessee are performing below average academically. 
 Your superintendent, under pressure from frustrated parents and voters, 
